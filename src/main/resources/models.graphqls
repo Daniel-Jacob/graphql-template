@@ -1,0 +1,33 @@
+type Query {
+    authors: [Author]
+}
+
+type Mutation {
+    persistAuthors(input: AuthorInput): Author
+}
+
+type Author {
+    id: ID!
+    name: String
+    books: [Book]
+    publisher: String
+}
+
+input AuthorInput{
+    id: ID!
+    name: String
+    books: [BookInput]
+    publisher: String
+}
+
+input BookInput{
+    id: ID!
+    name: String
+    isbn: String
+}
+
+type Book{
+    id: ID!
+    name: String
+    isbn: String
+}
